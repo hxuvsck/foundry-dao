@@ -37,6 +37,10 @@ contract MyGovernor is
 
     // The following functions are overrides required by Solidity.
 
+    function mint(address to, uint256 amount) public {
+        _mint(to,amount);
+    } 
+
     function state(uint256 proposalId) public view override(Governor, GovernorTimelockControl) returns (ProposalState) {
         return super.state(proposalId);
     }
